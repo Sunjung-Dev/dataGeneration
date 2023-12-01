@@ -242,15 +242,13 @@ def crawling():
             sym_list.append(result[i].string)
         result_num += len(sym_list)
         sym_dict[title] = sym_list
-        print(len(sym_all_lists))
-    return sym_dict
+    return sym_all_lists
 
 def data_to_pandas(input_data):
     # index sentence tag 
     sentence_df_format.loc[len(sentence_df_format) + 1] = input_data
 
 def make_tag(sentence):
-        
     for i in range(len(sentence)):
         tag = ''
         for j in range(len(stop_words)):
@@ -316,7 +314,7 @@ if __name__ == "__main__":
     # morpho_analysis()
     # sentence_df_format.to_excel(excel_writer='./test1.xlsx')
     # excel_to_txt()
-    crawling()
+    print(crawling())
 
     
 
